@@ -7,7 +7,7 @@ import LoginForm from "@/components/LoginForm";
 import ForLawyers from "@/UI/ForLawyers";
 export default function Home() {
   return (
-    <div>
+    <div className="">
       <Navbar/>
       <Hero/>
       <Forms/>
