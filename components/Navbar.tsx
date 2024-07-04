@@ -19,11 +19,8 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = ({ label, primary, className }) => {
-  const baseClasses =
-    "px-4 py-2 transition-colors duration-200";
-  const styleClasses = primary
-    ? "text-black"
-    : "text-black";
+  const baseClasses = "px-4 py-2 transition-colors duration-200";
+  const styleClasses = primary ? "text-black" : "text-black";
 
   return (
     <button className={`${baseClasses} ${styleClasses} ${className}`}>
@@ -67,65 +64,64 @@ export default function Navbar() {
 
   return (
     <nav className="bg-white text-black shadow-sm relative z-20 mx-auto">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center py-2">
-                <div className="flex flex-col items-center py-2">
-                    <div className="flex">
-                        <Link href="/">
-                            <h3 className="md:text-3xl text-2xl font-bold text-black cursor-pointer">
-                                LegalBooks
-                            </h3>
-                        </Link>
-                    </div>
-                </div>
-                <div className="flex items-center justify-between space-x-8">
-                    <ul className="hidden md:flex space-x-8 list-none">
-                    {["Lawyer Search", "Jobs", "Free Consultation"].map((link) => (
-                        <NavLink key={link} label={link} />
-                    ))}
-                    </ul>
-                    
-                </div>
-                <div>
-                    <div className="flex items-center justify-center space-x-4">
-                        <Button
-                            label="Log in"
-                            primary
-                            className=" hidden md:block text-black"
-                        />
-                        <Button
-                            label="Sign up"
-                            primary
-                            className="hidden md:block rounded-md bg-[#10b981] text-white"
-                        />
-                    </div>
-                    <div>
-                        <button
-                            className="md:hidden flex p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset"
-                            onClick={toggleMobileMenu}
-                        >
-                            <svg
-                            className="h-6 w-6"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M4 6h16M4 12h16M4 18h16"
-                            />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center py-2">
+          <div className="flex flex-col items-center py-2">
+            <div className="flex">
+              <Link href="/">
+                <h3 className="md:text-3xl text-2xl font-bold text-black cursor-pointer">
+                  LegalBooks
+                </h3>
+              </Link>
             </div>
+          </div>
+          <div className="flex items-center justify-between space-x-8">
+            <ul className="hidden md:flex space-x-8 list-none">
+              {["Lawyer Search", "Jobs", "Free Consultation"].map((link) => (
+                <NavLink key={link} label={link} />
+              ))}
+            </ul>
+          </div>
+          <div>
+            <div className="flex items-center justify-center space-x-4">
+              <Button
+                label="Log in"
+                primary
+                className=" hidden md:block text-black"
+              />
+              <Button
+                label="Sign up"
+                primary
+                className="hidden md:block rounded-md bg-[#10b981] text-white"
+              />
+            </div>
+            <div>
+              <button
+                className="md:hidden flex p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset"
+                onClick={toggleMobileMenu}
+              >
+                <svg
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
-        <MobileMenu
-            isOpen={isMobileMenuOpen}
-            links={["Lawyer Search", "Jobs", "Free Consultation"]}
-        />
+      </div>
+      <MobileMenu
+        isOpen={isMobileMenuOpen}
+        links={["Lawyer Search", "Jobs", "Free Consultation"]}
+      />
     </nav>
   );
 }
