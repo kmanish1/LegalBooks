@@ -4,6 +4,7 @@ import Hero from "@/UI/Hero";
 import Forms from "@/UI/Forms";
 import LegalConsultationForm from "@/components/LegalConsultationForm";
 import LoginForm from "@/components/LoginForm";
+import ForLawyers from "@/UI/ForLawyers";
 export default function Home() {
   return (
     <div>
