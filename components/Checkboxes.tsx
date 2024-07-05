@@ -7,7 +7,9 @@ interface Section {
 }
 
 const Checkboxes: React.FC = () => {
-  const [activeSections, setActiveSections] = useState<{ [key: string]: boolean }>({});
+  const [activeSections, setActiveSections] = useState<{
+    [key: string]: boolean;
+  }>({});
 
   const toggleSpecializations = (section: string) => {
     setActiveSections((prev) => ({
@@ -25,7 +27,11 @@ const Checkboxes: React.FC = () => {
     {
       id: "appeals",
       label: "Appeals",
-      subOptions: ["Introduction to Appeals", "Supreme Court Appeals", "High Court Appeals"],
+      subOptions: [
+        "Introduction to Appeals",
+        "Supreme Court Appeals",
+        "High Court Appeals",
+      ],
     },
     {
       id: "banking",
@@ -144,7 +150,11 @@ const Checkboxes: React.FC = () => {
     {
       id: "environmental",
       label: "Environmental Law",
-      subOptions: ["Air Pollution", "Wild Life Protection", "Environment Protection"],
+      subOptions: [
+        "Air Pollution",
+        "Wild Life Protection",
+        "Environment Protection",
+      ],
     },
     {
       id: "government",
@@ -229,7 +239,8 @@ const Checkboxes: React.FC = () => {
     },
   ];
 
-{/* <div className="mb-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  {
+    /* <div className="mb-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {sections.map((section) => (
           <div key={section.id}>
             <label className="font-bold">
@@ -250,28 +261,35 @@ const Checkboxes: React.FC = () => {
 
           </div>
         ))}
-      </div> */}
+      </div> */
+  }
 
   return (
     <div className="popup-content text-sm">
-        <div className="mb-4 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {sections.map((section)=>(
-                <div className="text-left">
-                    <label className="font-bold">
-                        <input className="mr-2 rounded-full cursor-pointer bg-red-100 border-red-300 text-red-600 focus:ring-red-200" type="checkbox"></input>
-                        {section.label}
-                    </label>
-                    <div className="grid grid-cols-1 gap-2 mt-3">
-                        {section.subOptions.map((subOption,index)=>(
-                            <label key={index} className="ml-4">
-                                <input type="checkbox" className="mr-2 rounded-full cursor-pointer bg-red-100 border-red-300 text-red-600 focus:ring-red-200"></input>
-                                {subOption}
-                            </label>
-                        ))}
-                    </div>
-                </div>
-            ))}
-        </div>
+      <div className="mb-4 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {sections.map((section, idx) => (
+          <div className="text-left" key={idx}>
+            <label className="font-bold">
+              <input
+                className="mr-2 rounded-full cursor-pointer bg-red-100 border-red-300 text-red-600 focus:ring-red-200"
+                type="checkbox"
+              ></input>
+              {section.label}
+            </label>
+            <div className="grid grid-cols-1 gap-2 mt-3">
+              {section.subOptions.map((subOption, index) => (
+                <label key={index} className="ml-4">
+                  <input
+                    type="checkbox"
+                    className="mr-2 rounded-full cursor-pointer bg-red-100 border-red-300 text-red-600 focus:ring-red-200"
+                  ></input>
+                  {subOption}
+                </label>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
