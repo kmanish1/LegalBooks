@@ -1,11 +1,22 @@
+"use client"
 import React from "react";
-
+import { useState } from "react";
 const LegalConsultationForm: React.FC = () => {
   const titles = ["Mr.", "Ms."];
   const states = ["Select your state"];
   const cities = ["Select your city"];
   const practiceAreas = ["Select the area where you think you need help"];
   const countryCodes = ["+91"];
+  const [showMobileOTP, setShowMobileOTP] = useState(false);
+  const [showEmailOTP, setShowEmailOTP] = useState(false);
+
+  const handleSendOTP = (type: 'mobile' | 'email') => {
+    if (type === 'mobile') {
+      setShowMobileOTP(true);
+    } else {
+      setShowEmailOTP(true);
+    }
+  };
 
   return (
     <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md">
@@ -108,10 +119,31 @@ const LegalConsultationForm: React.FC = () => {
               placeholder="984803XXXX"
               className="w-1/2 border border-gray-300 rounded-md p-2"
             />
-            <button className="bg-gray-800 text-white rounded-md px-4 py-2">
+            <button
+              type="button"
+              className="bg-gray-800 text-white rounded-md px-4 py-2"
+              onClick={() => handleSendOTP('mobile')}
+            >
               Send OTP
             </button>
           </div>
+          {showMobileOTP && (
+            <div className="mt-2">
+              <label className="block text-sm font-medium text-gray-700 mb-1">Enter OTP</label>
+              <div className="flex space-x-2">
+                {[0, 1, 2, 3].map((index) => (
+                  <input
+                    key={index}
+                    type="text"
+                    maxLength={1}
+                    className="w-12 h-12 text-center border border-gray-300 rounded-md"
+                  />
+                ))}
+                <button type="button" className="bg-green-600 text-white rounded-md px-4 py-2">Verify</button>
+              </div>
+              <button type="button" className="text-blue-600 text-sm mt-2">Resend OTP</button>
+            </div>
+          )}
         </div>
 
         <div className="mb-4">
@@ -127,10 +159,31 @@ const LegalConsultationForm: React.FC = () => {
               placeholder="example@example.com"
               className="w-3/4 border border-gray-300 rounded-md p-2"
             />
-            <button className="bg-gray-800 text-white rounded-md px-4 py-2">
+            <button
+              type="button"
+              className="bg-gray-800 text-white rounded-md px-4 py-2"
+              onClick={() => handleSendOTP('email')}
+            >
               Send OTP
             </button>
           </div>
+          {showEmailOTP && (
+            <div className="mt-2">
+              <label className="block text-sm font-medium text-gray-700 mb-1">Enter Email OTP</label>
+              <div className="flex space-x-2">
+                {[0, 1, 2, 3].map((index) => (
+                  <input
+                    key={index}
+                    type="text"
+                    maxLength={1}
+                    className="w-12 h-12 text-center border border-gray-300 rounded-md"
+                  />
+                ))}
+                <button type="button" className="bg-green-600 text-white rounded-md px-4 py-2">Verify</button>
+              </div>
+              <button type="button" className="text-blue-600 text-sm mt-2">Resend OTP</button>
+            </div>
+          )}
         </div>
       </form>
     </div>
