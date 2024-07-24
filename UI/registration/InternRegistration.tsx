@@ -1,7 +1,5 @@
 "use client";
-
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
 
 export default function InternRegistration() {
   const [formData, setFormData] = useState({
@@ -191,9 +189,11 @@ export default function InternRegistration() {
                   onChange={handleInputChange}
                 >
                   <option value="" disabled selected>
-                    Select State
+                    Andhra Pradesh
                   </option>
-                  {/* Add state options */}
+                  <option value="" disabled selected>
+                    Telanagana
+                  </option>
                 </select>
                 <select
                   id="city"
