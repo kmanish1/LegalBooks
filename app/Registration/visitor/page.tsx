@@ -1,4 +1,4 @@
-import VisitorRegistration from "@/UI/VisitorRegistration";
+import VisitorRegistration from "@/UI/registration/VisitorRegistration";
 export default function Register() {
   return (
     <div>

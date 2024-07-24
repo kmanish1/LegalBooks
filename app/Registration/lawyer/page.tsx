@@ -1,4 +1,4 @@
-import LawyerRegistration from "@/UI/LawyerRegistration";
+import LawyerRegistration from "@/UI/registration/LawyerRegistration";
 export default function Register() {
   return (
     <div>

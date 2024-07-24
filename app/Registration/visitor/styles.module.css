@@ -1,0 +1,105 @@
+body {
+    background-image: url('background.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.registration-container{
+    /* background-color: #0000001b; */
+    padding:5% 10%;
+}
+
+.registration-form{
+    border: 1px solid rgb(224, 224, 224);
+}
+
+.form-input {
+    padding: 0.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.375rem;
+    background-color: #e8e8e864;
+}
+
+.form-select {
+    padding: 0.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.375rem;
+    background-color: #e8e8e864;
+}
+
+.form-radio {
+    margin-right: 0.5rem;
+}
+
+#profileImage {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 9999px;
+}
+
+#uploadButton {
+    bottom: -0.5rem;
+    right: 0.3rem;
+    padding: 2px 10px;
+}
+
+/* Custom media queries for responsive design */
+
+@media (min-width: 768px) {
+    .registration-container {
+        flex-direction: row;
+    }
+
+    .company-info {
+        text-align: left;
+        margin-bottom: 0;
+    }
+
+    .registration-form {
+        margin-left: 2rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .registration-container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .company-info {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .registration-form {
+        margin-left: 0;
+    }
+
+    .form-input,
+    .form-select {
+        width: 100%;
+    }
+
+    .flex.space-x-2 > input {
+        width: calc(50% - 0.25rem);
+    }
+
+    .flex.space-x-4 > label {
+        width: calc(50% - 0.5rem);
+    }
+}
+
+/* Specific styles for OTP inputs */
+
+#emailOtpSection .form-input,
+#mobileOtpSection .form-input {
+    text-align: center;
+    width: 2.5rem;
+    margin-right: 0.25rem;
+}
+
+#emailOtpSection .form-input:last-child,
+#mobileOtpSection .form-input:last-child {
+    margin-right: 0;
+}
