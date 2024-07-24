@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const LoginForm: React.FC = () => {
   return (
@@ -65,9 +66,12 @@ const LoginForm: React.FC = () => {
           Forgot Password?
         </a>
         <div className="mt-2">
-          <a href="#" className="text-sm text-gray-600 underline">
+          <Link
+            href="/registration"
+            className="text-sm text-gray-600 underline"
+          >
             Create new account
-          </a>
+          </Link>
         </div>
       </div>
     </div>

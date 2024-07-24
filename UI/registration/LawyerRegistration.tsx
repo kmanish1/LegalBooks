@@ -207,7 +207,7 @@ export default function LawyerRegistration() {
                   onChange={handleInputChange}
                 >
                   <option value="" disabled selected>
-                    Select State
+                    Andhra Pradesh
                   </option>
                   {/* Add state options */}
                 </select>
@@ -262,14 +262,34 @@ export default function LawyerRegistration() {
               >
                 Primary Area Of Practice*
               </label>
+
               <select
-                id="primaryAreaOfPractice"
-                name="primaryAreaOfPractice"
+                id="practiceAreaDropdown"
+                name="city"
                 className="form-select w-full"
                 onChange={handleInputChange}
               >
                 <option value="">---- select ----</option>
-                {/* Add practice area options */}
+                <option value="adoption">Adoption</option>
+                <option value="appeals">Appeals</option>
+                <option value="banking">Banking & Insurance</option>
+                <option value="business">Business & Commercial Law</option>
+                <option value="constitution">
+                  Constitution & Law Procedure
+                </option>
+                <option value="consumer">Consumer Rights</option>
+                <option value="corporate">Corporate Law</option>
+                <option value="criminal">Criminal Law</option>
+                <option value="divorce">Divorce Laws in India</option>
+                <option value="environmental">Environmental Law</option>
+                <option value="government">Government Policies</option>
+                <option value="inheritance">Inheritance</option>
+                <option value="intellectual">Intellectual Property</option>
+                <option value="labor">Labor Law</option>
+                <option value="marriage">Marriage Law</option>
+                <option value="personal">Personal Law</option>
+                <option value="property">Property & Real Estate</option>
+                <option value="tax">Tax Laws</option>
               </select>
             </div>
 
