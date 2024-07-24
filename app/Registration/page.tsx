@@ -1,9 +1,8 @@
-
-import {RegistrationOptions} from "@/UI/RegistrationOptions";
+import { RegistrationOptions } from "@/UI/registration/RegistrationOptions";
 export default function Register() {
   return (
     <div>
-      <RegistrationOptions/>
+      <RegistrationOptions />
     </div>
   );
 }

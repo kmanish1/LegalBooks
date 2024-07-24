@@ -4,8 +4,8 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
 export default function VisitorRegistration() {
-  const [formData, setFormData] = useState({
-    photo: null as File | null,
+  const INITIAL_FORM_DATA = {
+    photo: null,
     firstName: "",
     lastName: "",
     addressLine1: "",
@@ -17,10 +17,10 @@ export default function VisitorRegistration() {
     confirmPassword: "",
     mobileNumber: "",
     mobileOtp: "",
-  });
+  };
 
+  const [formData, setFormData] = useState(INITIAL_FORM_DATA);
   const [otpSent, setOtpSent] = useState(false);
-  const [showPopup, setShowPopup] = useState(false);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -31,7 +31,7 @@ export default function VisitorRegistration() {
 
   const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
-      setFormData((prev) => ({ ...prev, photo: e.target.files![0] }));
+      // logic
     }
   };
 
@@ -40,19 +40,13 @@ export default function VisitorRegistration() {
     setOtpSent(true);
   };
 
-  const togglePopup = () => {
-    setShowPopup(!showPopup);
-  };
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const data = new FormData();
     Object.entries(formData).forEach(([key, value]) => {
       if (value !== null) {
-        if (key === "secondaryAreaOfPractices") {
-          data.append(key, JSON.stringify(value));
-        } else if (key === "photo" && value instanceof File) {
+        if (key === "photo") {
           data.append(key, value);
         } else {
           data.append(key, value.toString());
@@ -61,7 +55,8 @@ export default function VisitorRegistration() {
     });
 
     try {
-      const response = await fetch("/api/register-lawyer", {
+      // Changed endpoint to match visitor registration
+      const response = await fetch("/api/register-visitor", {
         method: "POST",
         body: data,
       });

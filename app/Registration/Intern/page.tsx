@@ -1,4 +1,4 @@
-import InternRegistration from "@/UI/InternRegistration";
+import InternRegistration from "@/UI/registration/InternRegistration";
 export default function Register() {
   return (
     <div>
