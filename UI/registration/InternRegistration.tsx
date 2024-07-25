@@ -286,7 +286,7 @@ export default function InternRegistration() {
                 <button
                   type="button"
                   onClick={handleSendOTP}
-                  className="bg-green-600 text-white p-2 rounded"
+                  className="bg-[#10b981] text-white p-2 rounded"
                 >
                   Send OTP
                 </button>
@@ -329,7 +329,7 @@ export default function InternRegistration() {
             <div className="text-center mb-4">
               <button
                 type="submit"
-                className="bg-green-600 text-white p-2 rounded w-full"
+                className="bg-[#10b981] text-white p-2 rounded w-full"
               >
                 Register
               </button>
@@ -338,7 +338,7 @@ export default function InternRegistration() {
             {/* Other registration options link */}
             <div className="text-center">
               <a
-                href="../Registration"
+                href="../registration"
                 className="text-gray-600 hover:underline"
               >
                 Other registration options
