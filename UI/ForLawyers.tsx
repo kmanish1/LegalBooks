@@ -40,8 +40,8 @@ export default function ForLawyers() {
             <div className="md:w-1/2 text-left space-y-4">
               <p className="case-m-p">
                 Assign Case to your Team, Plan Unique Team for every case,
-                Centralize Case Monitoring, Record Audit Trail of every Case with
-                individual dashboards
+                Centralize Case Monitoring, Record Audit Trail of every Case
+                with individual dashboards
               </p>
               <div className="flex flex-wrap gap-4 mb-4">
                 <button className="px-4 py-2 bg-gray-800 text-white rounded-md">

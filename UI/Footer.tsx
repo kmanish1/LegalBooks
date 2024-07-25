@@ -1,5 +1,5 @@
-import { link } from "fs";
 
+// update the links
 const data = [
   [
     { text: "About Us", link: "#" },

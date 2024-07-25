@@ -188,6 +188,9 @@ export default function InternRegistration() {
                   <option value="" disabled selected>
                     Telanagana
                   </option>
+                  <option>
+                    {/* add more states */}
+                  </option>
                 </select>
                 <select
                   id="city"
@@ -197,6 +200,9 @@ export default function InternRegistration() {
                 >
                   <option value="" disabled selected>
                     Select City
+                  </option>
+                  <option>
+                    {/* Add city names here */}
                   </option>
                 </select>
               </div>
