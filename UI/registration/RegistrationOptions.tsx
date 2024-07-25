@@ -30,7 +30,7 @@ export function RegistrationOptions() {
 
           <div className="bg-white p-8 rounded shadow-lg">
             <h2 className="text-2xl font-bold text-center mb-6">Register as</h2>
-            <div className="flex justify-center mb-6">
+            <div className="flex justify-center flex-wrap mb-6">
               {REGISTRATION_OPTIONS.map(({ label, path }) => (
                 <label key={label} className="flex items-center mr-4">
                   <input

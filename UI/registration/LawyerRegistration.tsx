@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Checkboxes from "@/components/Checkboxes";
 
 export default function LawyerRegistration() {
   const [formData, setFormData] = useState({
@@ -28,6 +29,10 @@ export default function LawyerRegistration() {
 
   const [otpSent, setOtpSent] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
+  const [showArea,setShowArea]=useState(false);
+  function handleAreaofPractice(){
+    setShowArea(!showArea);
+  }
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -304,27 +309,36 @@ export default function LawyerRegistration() {
               <button
                 type="button"
                 className="input-field mb-2 md:mb-0 bg-gray-500 text-white px-4 py-2 rounded-md"
-                onClick={togglePopup}
+                onClick={handleAreaofPractice}
               >
                 select
               </button>
             </div>
 
             {/* Popup for selecting secondary areas */}
-            {showPopup && (
-              <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-                <div className="bg-white p-6 rounded-lg max-w-3xl max-h-[80vh] overflow-y-auto">
-                  <h2 className="text-2xl font-bold mb-4">
-                    Select Area of Practice
-                  </h2>
-                  {/* Add checkboxes for secondary areas */}
-                  <button
-                    type="button"
-                    onClick={togglePopup}
-                    className="mt-4 bg-blue-500 text-white px-4 py-2 rounded"
-                  >
-                    Close
-                  </button>
+            {showArea && (
+              // <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+              //   <div className="bg-white p-6 rounded-lg max-w-5xl max-h-[80vh] overflow-y-auto">
+              //     <h2 className="text-2xl font-bold mb-4">
+              //       Select Area of Practice
+              //     </h2>
+              //     <Checkboxes/>
+              //     <button
+              //       type="button"
+              //       onClick={togglePopup}
+              //       className="mt-4 bg-blue-500 text-white px-4 py-2 rounded"
+              //     >
+              //       Close
+              //     </button>
+              //   </div>
+              // </div>
+              <div className="bg-white z-50 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-h-[100vh] w-[80%]">
+                <div className="flex justify-between items-center">
+                  <h2 className="text-2xl p-2">Select area of Practice</h2>
+                  <button className="bg-red-600 p-3 font-bold text-white" onClick={handleAreaofPractice}>X</button>
+                </div>
+                <div className="p-4 max-h-[70vh] overflow-y-scroll">
+                  <Checkboxes />
                 </div>
               </div>
             )}
@@ -462,7 +476,7 @@ export default function LawyerRegistration() {
                 <button
                   type="button"
                   onClick={handleSendOTP}
-                  className="bg-green-600 text-white p-2 rounded"
+                  className="bg-[#10b981] text-white p-2 rounded"
                 >
                   Send OTP
                 </button>
@@ -505,7 +519,7 @@ export default function LawyerRegistration() {
             <div className="text-center mb-4">
               <button
                 type="submit"
-                className="bg-green-600 text-white p-2 rounded w-full"
+                className="bg-[#10b981] text-white p-2 rounded w-full"
               >
                 Register
               </button>
@@ -514,7 +528,7 @@ export default function LawyerRegistration() {
             {/* Other registration options link */}
             <div className="text-center">
               <a
-                href="../Registration"
+                href="../registration"
                 className="text-gray-600 hover:underline"
               >
                 Other registration options
