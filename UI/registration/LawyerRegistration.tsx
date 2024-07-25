@@ -48,7 +48,6 @@ export default function LawyerRegistration() {
   };
 
   const handleSendOTP = async () => {
-    // Implement OTP sending logic here
     setOtpSent(true);
   };
 
@@ -89,10 +88,8 @@ export default function LawyerRegistration() {
 
       if (response.ok) {
         console.log("Registration successful");
-        // Handle successful registration (e.g., redirect or show success message)
       } else {
         console.error("Registration failed");
-        // Handle errors
       }
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -129,7 +126,6 @@ export default function LawyerRegistration() {
           </h2>
 
           <form onSubmit={handleSubmit}>
-            {/* Photo upload section */}
             <div className="text-center mb-6">
               <div className="relative inline-block">
                 <img
@@ -160,7 +156,6 @@ export default function LawyerRegistration() {
               </div>
             </div>
 
-            {/* Name fields */}
             <div className="mb-4">
               <label
                 htmlFor="firstName"
@@ -188,7 +183,6 @@ export default function LawyerRegistration() {
               </div>
             </div>
 
-            {/* Address fields */}
             <div className="mb-4">
               <label
                 htmlFor="addressLine1"
@@ -214,7 +208,8 @@ export default function LawyerRegistration() {
                   <option value="" disabled selected>
                     Andhra Pradesh
                   </option>
-                  {/* Add state options */}
+                  <option value="State1">State1</option>
+                  <option value="State2">State2</option>
                 </select>
                 <select
                   id="city"
@@ -225,7 +220,6 @@ export default function LawyerRegistration() {
                   <option value="" disabled selected>
                     Select City
                   </option>
-                  {/* Add city options */}
                 </select>
               </div>
               <input
@@ -238,7 +232,6 @@ export default function LawyerRegistration() {
               />
             </div>
 
-            {/* Gender field */}
             <div className="mb-4">
               <label
                 htmlFor="gender"
@@ -259,7 +252,6 @@ export default function LawyerRegistration() {
               </select>
             </div>
 
-            {/* Primary Area of Practice */}
             <div className="mb-4">
               <label
                 htmlFor="primaryAreaOfPractice"
@@ -298,7 +290,6 @@ export default function LawyerRegistration() {
               </select>
             </div>
 
-            {/* Secondary Area of Practices */}
             <div className="mb-4" id="search-custom-lawyer-container">
               <label
                 htmlFor="otherPracticeAreas"
@@ -315,7 +306,6 @@ export default function LawyerRegistration() {
               </button>
             </div>
 
-            {/* Popup for selecting secondary areas */}
             {showArea && (
               // <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
               //   <div className="bg-white p-6 rounded-lg max-w-5xl max-h-[80vh] overflow-y-auto">
@@ -343,7 +333,6 @@ export default function LawyerRegistration() {
               </div>
             )}
 
-            {/* Court Type */}
             <div className="mb-4">
               <label
                 htmlFor="courtType"
@@ -367,7 +356,6 @@ export default function LawyerRegistration() {
               </select>
             </div>
 
-            {/* Dynamic fields based on court type */}
             {formData.courtType && (
               <div className="flex mb-4 space-x-2">
                 <select
@@ -377,7 +365,6 @@ export default function LawyerRegistration() {
                   onChange={handleInputChange}
                 >
                   <option value="">-- Select State --</option>
-                  {/* Add state options */}
                 </select>
                 <select
                   id="districtDropdown"
@@ -386,7 +373,6 @@ export default function LawyerRegistration() {
                   onChange={handleInputChange}
                 >
                   <option value="">-- Select District --</option>
-                  {/* Add district options */}
                 </select>
                 <select
                   id="courtDropdown"
@@ -395,12 +381,10 @@ export default function LawyerRegistration() {
                   onChange={handleInputChange}
                 >
                   <option value="">-- Select Court --</option>
-                  {/* Add court options */}
                 </select>
               </div>
             )}
 
-            {/* Years of Practice */}
             <div className="mb-4">
               <label
                 htmlFor="yearsOfPractice"
@@ -428,7 +412,6 @@ export default function LawyerRegistration() {
               </div>
             </div>
 
-            {/* Password fields */}
             <div className="mb-4">
               <label
                 htmlFor="password"
@@ -456,7 +439,6 @@ export default function LawyerRegistration() {
               </div>
             </div>
 
-            {/* Mobile Number and OTP */}
             <div className="mb-4">
               <label
                 htmlFor="mobileNumber"
@@ -515,7 +497,6 @@ export default function LawyerRegistration() {
               </div>
             )}
 
-            {/* Submit button */}
             <div className="text-center mb-4">
               <button
                 type="submit"
@@ -525,7 +506,6 @@ export default function LawyerRegistration() {
               </button>
             </div>
 
-            {/* Other registration options link */}
             <div className="text-center">
               <a
                 href="../registration"
