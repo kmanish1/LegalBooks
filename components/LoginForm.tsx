@@ -1,8 +1,12 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 const LoginForm: React.FC = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
     <div className="max-w-sm mx-auto mt-10 p-6 rounded-lg ">
       <h1 className="text-2xl font-bold text-center mb-6">Log In</h1>
@@ -42,16 +46,24 @@ const LoginForm: React.FC = () => {
         <div className="flex-grow border-t border-gray-300"></div>
       </div>
 
-      <form>
+      <form onSubmit={() => {}}>
         <input
           type="email"
           placeholder="Email Address"
+          value={email}
+          onChange={(e) => {
+            setEmail(e.target.value);
+          }}
           className="w-full mb-3 p-2 border border-gray-300 rounded-md"
         />
         <input
           type="password"
           placeholder="Password"
           className="w-full mb-6 p-2 border border-gray-300 rounded-md"
+          value={password}
+          onChange={(e) => {
+            setPassword(e.target.value);
+          }}
         />
         <button
           type="submit"
