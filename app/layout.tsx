@@ -35,7 +35,7 @@ export const metadata: Metadata = {
       "facebook-domain-verification": ["YOUR_DATA"],
     },
   },
-  title: "Leagal Books",
+  title: "Legal Books",
   description: "Find India's best Lawyers",
 };
 
