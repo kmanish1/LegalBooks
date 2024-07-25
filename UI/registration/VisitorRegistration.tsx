@@ -36,7 +36,6 @@ export default function VisitorRegistration() {
   };
 
   const handleSendOTP = async () => {
-    // Implement OTP sending logic here
     setOtpSent(true);
   };
 
@@ -55,7 +54,6 @@ export default function VisitorRegistration() {
     });
 
     try {
-      // Changed endpoint to match visitor registration
       const response = await fetch("/api/register-visitor", {
         method: "POST",
         body: data,
@@ -63,10 +61,8 @@ export default function VisitorRegistration() {
 
       if (response.ok) {
         console.log("Registration successful");
-        // Handle successful registration (e.g., redirect or show success message)
       } else {
         console.error("Registration failed");
-        // Handle errors
       }
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -103,7 +99,6 @@ export default function VisitorRegistration() {
           </h2>
 
           <form onSubmit={handleSubmit}>
-            {/* Photo upload section */}
             <div className="text-center mb-6">
               <div className="relative inline-block">
                 <img
@@ -134,7 +129,6 @@ export default function VisitorRegistration() {
               </div>
             </div>
 
-            {/* Name fields */}
             <div className="mb-4">
               <label
                 htmlFor="firstName"
@@ -162,7 +156,6 @@ export default function VisitorRegistration() {
               </div>
             </div>
 
-            {/* Address fields */}
             <div className="mb-4">
               <label
                 htmlFor="addressLine1"
@@ -188,7 +181,6 @@ export default function VisitorRegistration() {
                   <option value="" disabled selected>
                     Select State
                   </option>
-                  {/* Add state options */}
                 </select>
                 <select
                   id="city"
@@ -199,7 +191,6 @@ export default function VisitorRegistration() {
                   <option value="" disabled selected>
                     Select City
                   </option>
-                  {/* Add city options */}
                 </select>
               </div>
               <input
@@ -212,7 +203,6 @@ export default function VisitorRegistration() {
               />
             </div>
 
-            {/* Gender field */}
             <div className="mb-4">
               <label
                 htmlFor="gender"
@@ -233,7 +223,6 @@ export default function VisitorRegistration() {
               </select>
             </div>
 
-            {/* Password fields */}
             <div className="mb-4">
               <label
                 htmlFor="password"
@@ -261,7 +250,6 @@ export default function VisitorRegistration() {
               </div>
             </div>
 
-            {/* Mobile Number and OTP */}
             <div className="mb-4">
               <label
                 htmlFor="mobileNumber"
@@ -320,7 +308,6 @@ export default function VisitorRegistration() {
               </div>
             )}
 
-            {/* Submit button */}
             <div className="text-center mb-4">
               <button
                 type="submit"
@@ -330,7 +317,6 @@ export default function VisitorRegistration() {
               </button>
             </div>
 
-            {/* Other registration options link */}
             <div className="text-center">
               <a
                 href="../registration"
